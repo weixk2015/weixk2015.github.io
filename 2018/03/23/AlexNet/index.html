@@ -239,7 +239,7 @@
 
     
         <meta property="article:published_time" content="Fri Mar 23 2018 09:46:38 GMT+0800">
-        <meta property="article:modified_time" content="Fri Mar 23 2018 11:29:28 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 23 2018 11:37:56 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/03/23/AlexNet/index.html",
     "headline": "AlexNet",
     "datePublished": "Fri Mar 23 2018 09:46:38 GMT+0800",
-    "dateModified": "Fri Mar 23 2018 11:29:28 GMT+0800",
+    "dateModified": "Fri Mar 23 2018 11:37:56 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Xingkui Wei",
@@ -499,9 +499,9 @@ dropout 减少过拟合
 <h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><pre><code>from ImageNet-2010
 256 * 256 缩放+裁剪
 预处理：RGB减去分别减去平均值
-</code></pre><h2 id="Achitecture"><a href="#Achitecture" class="headerlink" title="Achitecture"></a>Achitecture</h2><p><img src="https://pic1.zhimg.com/v2-81a59df92fdb17756cd1b7d484c7092c_r.jpg" alt="网络整体架构"><br> <strong>1. RELU</strong></p>
+</code></pre><h2 id="Achitecture"><a href="#Achitecture" class="headerlink" title="Achitecture"></a>Achitecture</h2><p><img src="https://github.com/weixk2015/weixk2015.github.io/blob/master/image/alex_net.jpg?raw=true" alt="网络整体架构"><br> <strong>1. RELU</strong></p>
 <ul>
-<li>弃用了传统的tanh或是sigmoid，改用$ f(x) = max(0,x) $,大大提高了训练速度<br> <img src="https://pic1.zhimg.com/80/v2-87339f7c86aeebd86d16521a323dc59c_hd.jpg" alt="reLu与tanh比较"></li>
+<li>弃用了传统的tanh或是sigmoid，改用$ f(x) = max(0,x) $,大大提高了训练速度<br> <img src="https://github.com/weixk2015/weixk2015.github.io/blob/master/image/relu_tanh.jpg?raw=true" alt="reLu与tanh比较"></li>
 </ul>
 <blockquote>
 <p>图1：采用ReLUs的四层CNN（实线）对CIFAR-10数据集达到25%训练错误率的速度是采用tanh的CNN（虚线）的六倍。每个网络的学习率（learning rate）都是独立选取以使其训练速度最大化，且都没有经过正则化处理。当然，两种CNN的训练时间上的差距依不同架构会有所不同，但采用ReLUs的CNN总是快过用饱和激活函数的CNN。</p>
