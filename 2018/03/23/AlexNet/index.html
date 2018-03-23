@@ -239,7 +239,7 @@
 
     
         <meta property="article:published_time" content="Fri Mar 23 2018 09:46:38 GMT+0800">
-        <meta property="article:modified_time" content="Fri Mar 23 2018 10:03:12 GMT+0800">
+        <meta property="article:modified_time" content="Fri Mar 23 2018 11:29:28 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/03/23/AlexNet/index.html",
     "headline": "AlexNet",
     "datePublished": "Fri Mar 23 2018 09:46:38 GMT+0800",
-    "dateModified": "Fri Mar 23 2018 10:03:12 GMT+0800",
+    "dateModified": "Fri Mar 23 2018 11:29:28 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Xingkui Wei",
@@ -346,7 +346,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Abstract"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#标题"><span class="post-toc-number">2.</span> <span class="post-toc-text">标题</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Abstract"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Backgroud"><span class="post-toc-number">2.</span> <span class="post-toc-text">Backgroud</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Dataset"><span class="post-toc-number">3.</span> <span class="post-toc-text">Dataset</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Achitecture"><span class="post-toc-number">4.</span> <span class="post-toc-text">Achitecture</span></a></li></ol>
     </ul>
     
 
@@ -483,15 +483,66 @@ AlexNet
 Top-1 erro 37.5% 
 Top-5 erro 17.0%
 60million parameter
-5 conv layer + pooling layer
-3 ful-con layer
+5 conv layer + 3 pooling layer
+2 ful-con layer
 1 softmax layer
 
 no-saturating neurons
 使用不挤压输出的激活函数，如relu等，可以减少梯度消失情况的出现
 
 dropout 减少过拟合
-</code></pre><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2>
+</code></pre><h2 id="Backgroud"><a href="#Backgroud" class="headerlink" title="Backgroud"></a>Backgroud</h2><ul>
+<li>大规模数据集出现</li>
+<li>CNN有较强模型能力，适于图像处理任务</li>
+<li>GPU对于卷积的优化</li>
+</ul>
+<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><pre><code>from ImageNet-2010
+256 * 256 缩放+裁剪
+预处理：RGB减去分别减去平均值
+</code></pre><h2 id="Achitecture"><a href="#Achitecture" class="headerlink" title="Achitecture"></a>Achitecture</h2><p><img src="https://pic1.zhimg.com/v2-81a59df92fdb17756cd1b7d484c7092c_r.jpg" alt="网络整体架构"><br> <strong>1. RELU</strong></p>
+<ul>
+<li>弃用了传统的tanh或是sigmoid，改用$ f(x) = max(0,x) $,大大提高了训练速度<br> <img src="https://pic1.zhimg.com/80/v2-87339f7c86aeebd86d16521a323dc59c_hd.jpg" alt="reLu与tanh比较"></li>
+</ul>
+<blockquote>
+<p>图1：采用ReLUs的四层CNN（实线）对CIFAR-10数据集达到25%训练错误率的速度是采用tanh的CNN（虚线）的六倍。每个网络的学习率（learning rate）都是独立选取以使其训练速度最大化，且都没有经过正则化处理。当然，两种CNN的训练时间上的差距依不同架构会有所不同，但采用ReLUs的CNN总是快过用饱和激活函数的CNN。</p>
+</blockquote>
+<p> <strong>2. 多GPU训练</strong></p>
+<ul>
+<li>在两个GPU并行训练</li>
+<li>俩个GPU只在某些特定层传递数据</li>
+</ul>
+<p><strong>3. 归一化</strong></p>
+<ul>
+<li>从生物神经中受到启发</li>
+<li>近邻的较大值可以对自身进行抑制</li>
+</ul>
+<p><strong>4. overlapping pooling</strong></p>
+<ul>
+<li><p>3*3 2步长 减少了过拟合</p>
+<p><strong>4. 整体架构</strong></p>
+</li>
+</ul>
+<ul>
+<li>如上图</li>
+</ul>
+<pre><code>input    227 * 227 * 3 
+conv1    11 * 11 * 3 * 96
+active1  55 * 55 * 48 * 2
+pool1    27 * 27 * 48 * 2
+conv2    5  * 5  * 48 * 128 * 2
+active2  27 * 27 * 128 * 2
+pool2    13 * 13 * 128 * 2
+conv3    3  * 3  * 256 * 192 * 2
+active3  13 * 13 * 192 * 2
+conv4    3  * 3  * 192 * 192 * 2
+active4  13 * 13 * 192 * 2
+con5     3  * 3  * 192 * 128 * 2
+active5  13 * 13 * 128 * 2
+pool5    6  * 6  * 128 * 2
+fulc1    6  * 6  * 256 * 4096  
+active6-7  2048 * 2
+sofmax   1000
+</code></pre>
         
     
 
