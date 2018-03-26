@@ -239,7 +239,7 @@
 
     
         <meta property="article:published_time" content="Mon Mar 26 2018 19:57:04 GMT+0800">
-        <meta property="article:modified_time" content="Mon Mar 26 2018 20:25:39 GMT+0800">
+        <meta property="article:modified_time" content="Mon Mar 26 2018 21:36:08 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/03/26/VGGNet/index.html",
     "headline": "VGGNet",
     "datePublished": "Mon Mar 26 2018 19:57:04 GMT+0800",
-    "dateModified": "Mon Mar 26 2018 20:25:39 GMT+0800",
+    "dateModified": "Mon Mar 26 2018 21:36:08 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Xingkui Wei",
@@ -346,7 +346,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Abstract"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Introduction"><span class="post-toc-number">2.</span> <span class="post-toc-text">Introduction</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Architecture"><span class="post-toc-number">3.</span> <span class="post-toc-text">Architecture</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Abstract"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Introduction"><span class="post-toc-number">2.</span> <span class="post-toc-text">Introduction</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Architecture"><span class="post-toc-number">3.</span> <span class="post-toc-text">Architecture</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Classification-Task"><span class="post-toc-number">4.</span> <span class="post-toc-text">Classification Task</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Evaluation"><span class="post-toc-number">5.</span> <span class="post-toc-text">Evaluation</span></a></li></ol>
     </ul>
     
 
@@ -485,8 +485,20 @@
 <li>使用了3<em>3和1</em>1卷积，保留维度的填充，部分卷积层后跟max-pooling2*2</li>
 <li>3 fc layer（4096 input） 1 softmax</li>
 <li>所有激活函数为relu</li>
-<li>LRN因为没有效果而被弃用<br><strong>图示</strong><br><img src="http://upload-images.jianshu.io/upload_images/3232548-bcc2ded7859ee146.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="vggNet Architecture"></li>
+<li>LRN因为没有效果而被弃用<br><strong>图示</strong><br>![vggNet Architecture][1]<br>![number of parameters][2]<br><strong>讨论</strong><br>多个3<em>3层可以达到7</em>7的视野，同时减少了参数数量，增加了非线性<br>1*1保持channel数不变，增加了模型能力</li>
 </ul>
+<h2 id="Classification-Task"><a href="#Classification-Task" class="headerlink" title="Classification Task"></a>Classification Task</h2><p>与Alex类似，74次迭代后停止</p>
+<blockquote>
+<p>We conjecture that in spite of the larger number of parameters and the greater depth of our nets compared to (Krizhevsky et al., 2012), the nets required less epochs to converge due to (a) <strong>implicit regularisation</strong> imposed by greater depth and smaller conv. filter sizes; (b) pre-initialisation of certain layers.</p>
+</blockquote>
+<p>初始化：<br>先使用随机初始化训练较浅网络，使用训练后的结果（前四层和后三层）初始化更深的网络</p>
+<p>图片处理：<br>isotropically-rescaled：各向同性缩放<br>先缩放为S大小：[256,512]，再随机取区域裁剪为224*224</p>
+<p>测试：<br>缩放为scale Q<br><strong>将全连接转化为卷积</strong>，最后得到1000<em>n</em>n的输出，等效于在scale Q上选取了n*n个位置放入神经网络<br>节省了计算量</p>
+<blockquote>
+<p>作者：Hao Zhang<br>链接：<a href="https://www.zhihu.com/question/53420266/answer/180001976" target="_blank" rel="noopener">https://www.zhihu.com/question/53420266/answer/180001976</a><br>来源：知乎<br>卷积层和全连接层的唯一区别在于卷积层的神经元对输入是局部连接的, 并且同一个通道(channel)内不同神经元共享权值(weights). 卷积层和全连接层都是进行了一个点乘操作, 它们的函数形式相同. 因此卷积层可以转化为对应的全连接层, 全连接层也可以转化为对应的卷积层.<br>比如VGGNet中, 第一个全连接层的输入是7<em>7</em>512, 输出是4096. 这可以用一个卷积核大小7<em>7, 步长(stride)为1, 没有填补(padding), 输出通道数4096的卷积层等效表示, 其输出为1</em>1<em>4096, 和全连接层等价. 后续的全连接层可以用1x1卷积等效替代.<br>简而言之, 全连接层转化为卷积层的规则是: 将卷积核大小设置为输入的空间大小.这样做的好处在于卷积层对输入大小没有限制, 因此可以高效地对测试图像做滑动窗式的预测. 比如训练时对224</em>224大小的图像得到7<em>7</em>512的特征, 而对于384<em>384大小的测试图像, 将得到12</em>12<em>512的特征, 通过后面3个从全连接层等效过来的卷积层, 输出大小是6</em>6*1000, 这表示了测试图像在36个空间位置上的各类分数向量. 和分别对测试图像的36个位置使用原始的CNN相比, 由于等效的CNN共享了大量计算, 这种方案十分高效而又达到了相同目的<br>参考文献<br>[1]Simonyan, Karen, and Andrew Zisserman. “Very deep convolutional networks for large-scale image recognition.” arXiv preprint arXiv:1409.1556 (2014).<br>[2]. Lin, Min, Qiang Chen, and Shuicheng Yan. “Network in network.” arXiv preprint arXiv:1312.4400<br>[3]. Sermanet, Pierre, et al. “Overfeat: Integrated recognition, localization and detection usingconvolutional networks.” arXiv preprint arXiv:1312.6229 (2013).<br>[4]. Long, Jonathan, Evan Shelhamer, and Trevor Darrell. “Fully convolutional networks forsemantic segmentation.” Proceedings of the IEEE Conference on Computer Vision andPattern Recognition. 2015.<br>[5]. Fei-Fei Li, Andrej Karpathy, and Justin Johnson. CS231n: Convolutional Neural Networks for Visual Recognition. Stanford. 2016.</p>
+</blockquote>
+<h2 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h2><p>![evaluation results][3]<br>![multi-scale evaluation][4]<br>![dense&amp;crop evaluation][5]<br>![convNet fusion evaluation][6]</p>
+<p><strong>比GoogLeNet泛化性能更好</strong><br>  [1]: <a href="http://upload-images.jianshu.io/upload_images/3232548-bcc2ded7859ee146.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3232548-bcc2ded7859ee146.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a><br>  [2]: <a href="http://upload-images.jianshu.io/upload_images/3232548-42a791044eec4ff3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3232548-42a791044eec4ff3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a><br>  [3]: <a href="http://upload-images.jianshu.io/upload_images/3232548-0bf25f504335c186.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3232548-0bf25f504335c186.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a><br>  [4]: <a href="http://upload-images.jianshu.io/upload_images/3232548-5efba64ff7d5c399.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3232548-5efba64ff7d5c399.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a><br>  [5]: <a href="http://upload-images.jianshu.io/upload_images/3232548-076a5b039b016b20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3232548-076a5b039b016b20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a><br>  [6]: <a href="http://upload-images.jianshu.io/upload_images/3232548-396bedeb565e428c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3232548-396bedeb565e428c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a></p>
 
         
     
