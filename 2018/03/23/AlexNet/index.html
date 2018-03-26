@@ -239,7 +239,7 @@
 
     
         <meta property="article:published_time" content="Fri Mar 23 2018 09:46:38 GMT+0800">
-        <meta property="article:modified_time" content="Fri Mar 23 2018 11:37:56 GMT+0800">
+        <meta property="article:modified_time" content="Mon Mar 26 2018 19:51:26 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/03/23/AlexNet/index.html",
     "headline": "AlexNet",
     "datePublished": "Fri Mar 23 2018 09:46:38 GMT+0800",
-    "dateModified": "Fri Mar 23 2018 11:37:56 GMT+0800",
+    "dateModified": "Mon Mar 26 2018 19:51:26 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Xingkui Wei",
@@ -346,7 +346,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Abstract"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Backgroud"><span class="post-toc-number">2.</span> <span class="post-toc-text">Backgroud</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Dataset"><span class="post-toc-number">3.</span> <span class="post-toc-text">Dataset</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Achitecture"><span class="post-toc-number">4.</span> <span class="post-toc-text">Achitecture</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Abstract"><span class="post-toc-number">1.</span> <span class="post-toc-text">Abstract</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Backgroud"><span class="post-toc-number">2.</span> <span class="post-toc-text">Backgroud</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Dataset"><span class="post-toc-number">3.</span> <span class="post-toc-text">Dataset</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Achitecture"><span class="post-toc-number">4.</span> <span class="post-toc-text">Achitecture</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Reduce-Overfitting"><span class="post-toc-number">5.</span> <span class="post-toc-text">Reduce Overfitting</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#More-Detail"><span class="post-toc-number">6.</span> <span class="post-toc-text">More Detail</span></a></li></ol>
     </ul>
     
 
@@ -499,9 +499,9 @@ dropout 减少过拟合
 <h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><pre><code>from ImageNet-2010
 256 * 256 缩放+裁剪
 预处理：RGB减去分别减去平均值
-</code></pre><h2 id="Achitecture"><a href="#Achitecture" class="headerlink" title="Achitecture"></a>Achitecture</h2><p><img src="https://github.com/weixk2015/weixk2015.github.io/blob/master/image/alex_net.jpg?raw=true" alt="网络整体架构"><br> <strong>1. RELU</strong></p>
+</code></pre><h2 id="Achitecture"><a href="#Achitecture" class="headerlink" title="Achitecture"></a>Achitecture</h2><p><img src="https://pic1.zhimg.com/v2-81a59df92fdb17756cd1b7d484c7092c_r.jpg" alt="网络整体架构"><br> <strong>1. RELU</strong></p>
 <ul>
-<li>弃用了传统的tanh或是sigmoid，改用$ f(x) = max(0,x) $,大大提高了训练速度<br> <img src="https://github.com/weixk2015/weixk2015.github.io/blob/master/image/relu_tanh.jpg?raw=true" alt="reLu与tanh比较"></li>
+<li>弃用了传统的tanh或是sigmoid，改用$ f(x) = max(0,x) $,大大提高了训练速度<br> <img src="https://pic1.zhimg.com/80/v2-87339f7c86aeebd86d16521a323dc59c_hd.jpg" alt="reLu与tanh比较"></li>
 </ul>
 <blockquote>
 <p>图1：采用ReLUs的四层CNN（实线）对CIFAR-10数据集达到25%训练错误率的速度是采用tanh的CNN（虚线）的六倍。每个网络的学习率（learning rate）都是独立选取以使其训练速度最大化，且都没有经过正则化处理。当然，两种CNN的训练时间上的差距依不同架构会有所不同，但采用ReLUs的CNN总是快过用饱和激活函数的CNN。</p>
@@ -542,7 +542,24 @@ pool5    6  * 6  * 128 * 2
 fulc1    6  * 6  * 256 * 4096  
 active6-7  2048 * 2
 sofmax   1000
-</code></pre>
+</code></pre><h2 id="Reduce-Overfitting"><a href="#Reduce-Overfitting" class="headerlink" title="Reduce Overfitting"></a>Reduce Overfitting</h2><ol>
+<li>数据增广</li>
+</ol>
+<pre><code>训练数据的载入（以及生成）在CPU上进行，与GPU中的训练并行
+</code></pre><ul>
+<li>通过对原图进行变换（256<em>256提取出224</em>224）以及水平翻转，训练集增加2048倍<br> 测试时取五个224*224以及对应水平翻转</li>
+<li>基于PCA对于每个像素的色彩进行变换，使得物体识别不依赖于色彩</li>
+</ul>
+<ol>
+<li>随机失活<br> 在前两个全连接层使用随机失活，降低神经元之间的依赖性，失活概率0.5<br> 测试时不进行随机失活，将输出乘以0.5<br> 收敛速度受到了影响</li>
+</ol>
+<h2 id="More-Detail"><a href="#More-Detail" class="headerlink" title="More Detail"></a>More Detail</h2><ol>
+<li>w随机初始化，接近0，b在relu层初始化为1，其他为0，以加快收敛</li>
+<li>使用随机梯度下降，momentem，weight decay</li>
+<li>学习率从0.01开始，逐渐降低，每次loss不减小后除10</li>
+<li>120万图片，90次迭代</li>
+</ol>
+
         
     
 
