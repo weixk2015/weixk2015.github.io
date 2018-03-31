@@ -1,1123 +1,1485 @@
 <!DOCTYPE html>
-<html style="display: none;" lang="zh">
-    <head>
-    <meta charset="utf-8">
-    <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.5.2 -->
-    <script>
-        window.materialVersion = "1.5.2"
-        // Delete localstorage with these tags
-        window.oldVersion = [
-            'codestartv1',
-            '1.3.4',
-            '1.4.0',
-            '1.4.0b1',
-            '1.5.0'
-        ]
-    </script>
-
-    <!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-    <!-- Title -->
-    
-    <title>
-        
-        XingkuiWei&#39;s blog
-    </title>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" href="/img/favicon.png">
-
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="日常分享">
-    <meta name="keywords" content="">
-    <meta name="theme-color" content="#0097A7">
-
-    <!-- Disable Fucking Bloody Baidu Tranformation -->
-    <meta http-equiv="Cache-Control" content="no-transform" />
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
-
-    <!-- Import queue -->
-    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
-
-    <!-- Import CSS -->
-    
-        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
-
-        
-
-    
-
-    
-
-    <!-- Config CSS -->
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    overflow-x: hidden !important;
-  }
   
-  code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  }
-
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-
-</style>
 
 
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
-      }
-    </style>
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
 
 
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-<!-- Import Roboto -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-
-<!-- Import Material Icons -->
-
-
-    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
 
 
 
-    <!-- Import jQuery -->
-    
-        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
-    
 
-    <!-- WebAPP Icons -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="XingkuiWei&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/">
-    <meta name="msapplication-navbutton-color" content="#0097A7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="XingkuiWei&#39;s blog">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-    <!-- Site Verification -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
     
+  
 
-    <!-- RSS -->
-    
+  
 
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="XingkuiWei&#39;s blog">
-    <meta property="og:image" content="/img/favicon.png">
-    <meta property="og:description" content="日常分享">
-    
+  
 
-    
+  
 
-    <!-- The Twitter Card protocol -->
-    <meta name="twitter:card" content="summary_large_image">
+  
 
-    <!-- Add canonical link for SEO -->
+  
     
-        <link rel="canonical" href="http://yoursite.com" />
     
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
 
-    <!-- Structured-data for SEO -->
-    
-        
-<script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "Website",
-    "publisher": {
-        "@type": "Organization",
-        "name": "XingkuiWei&#39;s blog",
-        "logo": "/img/favicon.png"
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, Visitor" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.png?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="日常分享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="XingkuiWei&#39;s blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="XingkuiWei&#39;s blog">
+<meta property="og:description" content="日常分享">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="XingkuiWei&#39;s blog">
+<meta name="twitter:description" content="日常分享">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
     },
-    "url": "http://yoursite.com",
-    "image": {
-        "@type": "ImageObject",
-        "url": "/img/favicon.png"
-    },
-    "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "http://yoursite.com"
-    },
-    "description": "日常分享"
-}
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
 </script>
 
 
 
+  <link rel="canonical" href="http://yoursite.com/"/>
 
-    
 
-    <!-- Analytics -->
-    
-    
-    
 
-    <!-- Custom Head -->
-    
+
+
+  <title>XingkuiWei's blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </head>
 
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
+  
+  
     
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
+  
 
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
 
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
     
-        <!-- Paradox Header -->
-        <!-- Daily pic -->
-<div class="mdl-card mdl-shadow--2dp daily-pic mdl-cell mdl-cell--8-col index-top-block">
 
-    <!-- Pic & Slogan -->
-    <div class="mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/daily_pic.png)">
-        <p class="index-top-block-slogan"><a href="#">
-        
-            
-                Hi, nice to meet you
-            
-        
-        </a></p>
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XingkuiWei's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
-
-    <!-- Avatar & Name -->
-    <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-        <!-- Author Avatar -->
-        <div id="author-avatar">
-            <img src="/img/cat.jpg" width="32px" height="32px" alt="avatar">
-        </div>
-        <div>
-            <strong>Xingkui Wei</strong>
-        </div>
-    </div>
-</div>
-
-        <!-- Blog info -->
-<div class="mdl-card mdl-shadow--2dp something-else mdl-cell mdl-cell--8-col mdl-cell--4-col-desktop index-top-block">
-
-    <!-- Search -->
-    
-    <!-- Google -->
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" method="post" action="">
-        <label id="search-label" class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent mdl-shadow--4dp" for="search">
-            <i class="material-icons mdl-color-text--white" role="presentation">search</i>
-        </label>
-
-        <form autocomplete="off" id="search-form" method="get" action="//google.com/search" accept-charset="UTF-8" class="mdl-textfield__expandable-holder" target="_blank">
-            <input class="mdl-textfield__input search-input" type="search" name="q" id="search" placeholder="">
-            <label id="search-form-label" class="mdl-textfield__label" for="search"></label>
-
-            <input type="hidden" name="sitesearch" value="http://yoursite.com">
-        </form>
-    </div>
-
-
-
-
-
-
-
-    <!-- LOGO -->
-    <div class="something-else-logo mdl-color--white mdl-color-text--grey-600">
-        <a href="#" target="_blank">
-            <img src="/img/logo.png" alt="logo" />
-        </a>
-    </div>
-
-    <!-- Infomation -->
-    <div class="mdl-card__supporting-text meta meta--fill mdl-color-text--grey-600">
-        <!-- Blog Title -->
-        <div>
-            <strong>XingkuiWei&#39;s blog</strong>
-        </div>
-        <div class="section-spacer"></div>
-
-        <!-- Pages -->
-        <button id="show-pages-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">view_carousel</i>
-            <span class="visuallyhidden">Pages</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="show-pages-button">
-            
-        </ul>
-
-        <!-- Menu -->
-        <button id="menubtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">more_vert</i>
-            <span class="visuallyhidden">show menu</span>
-        </button>
-        <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="menubtn">
-            
-
-            
-
-            
-                <a class="index_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=XingkuiWei&#39;s blog&url=http://yoursite.com&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
-                    <li class="mdl-menu__item mdl-js-ripple-effect">
-                        分享到微博
-                    </li>
-                </a>
-            
-
-            
-
-            
-
-            
-
-            
-
-            
-
-            
-        </ul>
-    </div>
-</div>
-
-    
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
-    
-
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/31/ResNet-1/">ResNet</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            ResNe...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/31/ResNet-1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 31, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/31/iccv-papers/">ICCV2015+ICCV2017 active learning papers</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/31/iccv-papers/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 31, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/31/pytorch-2/">Pytorch学习笔记(二)</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/31/pytorch-2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 31, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/26/VGGNet/">VGGNet</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/26/VGGNet/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 26, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/23/AlexNet/">AlexNet</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/23/AlexNet/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 23, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/21/pytorch-1/">Pytorch学习笔记(一）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/21/pytorch-1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 21, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/20/hello-world/">About me</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Welcome to 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/20/hello-world/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 20, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
-
-    
-</div>
-
-
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
+      
+        <p class="site-subtitle">Welcome</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
     </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/cat.jpg" alt="Xingkui Wei's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        xingkuiw@gmail.com
-        <b class="caret"></b>
-    </a>
+  </div>
 </div>
 
+<nav class="site-nav">
+  
 
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="xingkuiw@gmail.com" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                主页
-            </a>
-        </li>
+  
+    <ul id="menu" class="menu">
+      
         
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">7</span></a>
-            </ul>
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
         </li>
+      
         
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/31/ResNet-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xingkui Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingkuiWei's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/31/ResNet-1/" itemprop="url">ResNet</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-31T19:23:21+08:00">
+                2018-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
 
-    <!-- Categories  -->
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h1><p>标签： Paper CNN</p>
+<hr>
+<h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>通过残差网络的引入，极大的增加了CNN的深度，达到了前所未有的152层，在ILSVRC 2015中获得分类、检测第一名</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>更深的网络层次可以帮助模型获得较好性能，但是也带来一些问题：</p>
+<ul>
+<li>梯度消失/爆炸<br> 原因：前面层上的梯度是来自于后面层上梯度的乘乘积。当存在过多的层次时，就出现了内在本质上的不稳定场景，如梯度消失和梯度爆炸。<br> Simgmoid容易引发梯度消失，W过大引发梯度爆炸</li>
+<li>degradation的出现<br> 随着网络加深，train erro反而增加，而不是出现overfitting<br> 理论上新加入的层如果做identity映射，网络的性能就不会下降，然而实验表明即使是这样的映射也很难被学习<br><img src="https://img-blog.csdn.net/20160114000613328" alt="degradation"></li>
+<li>受此启发，本文提出我们可以帮助网络添加一个shortcut，让网络学习除去identification之外的东西，实验表明最优参数接近于identity，所以由于接近0的参数是比较容易学习的，减轻了网络的学习负担<br><img src="https://img-blog.csdn.net/20151216160852064https://img-blog.csdn.net/20160114000613328" alt="shortcut"></li>
+</ul>
+<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><ul>
+<li><p>公式<br><img src="https://img-blog.csdn.net/20151216164218284" alt="building block"><br>只有在维数不匹配时才需要额外的参数Ws（作用在x上），其他情况不会增加参数量<br>不仅适用于全连接层，也适用于卷积层</p>
+</li>
+<li><p>baseline<br>inspired by VGG<br>每次feature map减半时，channel加倍</p>
+</li>
+<li><p>projection<br>当维数不匹配时，可以选择填充0或引入参数，但维数不变时不引入参数（为了减少运算量和存储开销）</p>
+</li>
+<li><p>bottleneck Architecture<br><img src="http://img.blog.csdn.net/20171218163218299?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvUXVpbmN1bnRpYWw=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="bottleneck"><br>当网络非常深时，使用上图右半部分的残差块，两个1<em>1conv filter用于先把channel降低，在通过3</em>3后再拔高channel，这样可以降低计算负担，使之与左边残差块计算量相当</p>
+</li>
+</ul>
+<p>作者还探索了&gt;1000层的网络，但是效果不及100+网络</p>
+
+          
+        
+      
+    </div>
+    
+    
     
 
-    <!-- Pages  -->
     
 
-    <!-- Article Number  -->
     
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/31/iccv-papers/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xingkui Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingkuiWei's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/31/iccv-papers/" itemprop="url">ICCV2015+ICCV2017 active learning papers</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-31T19:23:21+08:00">
+                2018-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="ICCV2015-ICCV2017-active-learning-papers"><a href="#ICCV2015-ICCV2017-active-learning-papers" class="headerlink" title="ICCV2015+ICCV2017 active learning papers"></a>ICCV2015+ICCV2017 active learning papers</h1><p>标签： Paper ICCV</p>
+<hr>
+<h2 id="ICCV-2017"><a href="#ICCV-2017" class="headerlink" title="ICCV 2017"></a>ICCV 2017</h2><p><strong>1. Learning Policies for Adaptive Tracking with Deep Feature Cascades <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Huang_Learning_Policies_for_ICCV_2017_paper.pdf" target="_blank" rel="noopener">PDF</a></strong></p>
+<p><strong>cmu</strong></p>
+<p>使用deep的method效果会好，但速度变慢；而直接用相关滤波的方法，效果没那么好，但速度快。因此作者结合了两种方法，转化为决策问题，提出了一个可以自适应的方法 Early-Stopping Tracker (EAST)，容易track的frame就采用相关滤波即可，而难追踪的frame就继续进行convolution，得到表现好的deep feature。<br>使用Reinforce Learning训练一个agent，能够在每一层判断是否停止正向传播</p>
+<p>将CNN中的future map导入相关滤波<br><img src="https://pic1.zhimg.com/v2-19717bd96e1aee65ae03af90ed0ff808_r.jpg" alt="arch"></p>
+<p><img src="https://github.com/weixk2015/weixk2015.github.io/blob/master/value_func.png?raw=true" alt="value func"><br><strong>2. Personalized Image Aesthetics <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Ren_Personalized_Image_Aesthetics_ICCV_2017_paper.pdf" target="_blank" rel="noopener">pdf</a></strong></p>
+<p><strong>Rutgers University</strong></p>
+<p>回归问题，预测用户的美学评分</p>
+<p>通用评分预测+个人（内容+属性）网络<br>通用：cnn euclidean loss<br>个人：svr<br>分数及美学属性：cnn fine-tuning<br>内容属性：分类网络+k-means得到类别 之后fine-tune+soft-max<br>喂入用户评分与标准分相差较大的样本<br><strong>3. Hard-Aware Deeply Cascaded Embedding <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Yuan_Hard-Aware_Deeply_Cascaded_ICCV_2017_paper.pdf" target="_blank" rel="noopener">pdf</a></strong></p>
+<p><strong>pku</strong></p>
+<p><img src="http://oqgcmhf1h.bkt.clouddn.com/17-11-24/80156005.jpg" alt="hdc"><br>将网络分为多级，在每一级输出后选择loss较大的样本进入下一级进行训练<br><strong>4. Adaptive Feeding: Achieving Fast and Accurate Detections by Adaptively<br>Combining Object Detectors <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Zhou_Adaptive_Feeding_Achieving_ICCV_2017_paper.pdf" target="_blank" rel="noopener">pdf</a></strong></p>
+<p><strong>nju</strong></p>
+<p>与1类似，关于object detection</p>
+<p><strong>5.Active Learning for Human Pose Estimation</strong> <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Liu_Active_Learning_for_ICCV_2017_paper.pdf" target="_blank" rel="noopener">pdf</a><br>提出了multiple peak entropy， 用于measure uncertainty，</p>
+<h2 id="ICCV-2015"><a href="#ICCV-2015" class="headerlink" title="ICCV 2015"></a>ICCV 2015</h2><p> <strong>1.</strong> <strong>Context Aware Active Learning of Activity Recognition Model <a href="http://openaccess.thecvf.com/content_iccv_2015/papers/Hasan_Context_Aware_Active_ICCV_2015_paper.pdf" target="_blank" rel="noopener">pdf</a></strong><br><strong>ucr</strong><br>Activity Recognition，使用active learning 获得annotation<br>contribution：基于video中<strong>时空的联系</strong>，选择最informative的一个activity请求标注<br>使用CRF</p>
+<p><strong>2. Introducing Geometry in Active Learning for Image Segmentation <a href="http://openaccess.thecvf.com/content_iccv_2015/papers/Konyushkova_Introducing_Geometry_in_ICCV_2015_paper.pdf" target="_blank" rel="noopener">pdf</a></strong></p>
+<blockquote>
+<p>a novel uncertainty function that combines traditional Feature Uncertainty with Geometric Uncertainty</p>
+</blockquote>
+<p><strong>3. Multi-class Multi-annotator Active Learning with Robust Gaussian Process for<br>Visual Recognition <a href="http://openaccess.thecvf.com/content_iccv_2015/papers/Long_Multi-Class_Multi-Annotator_Active_ICCV_2015_paper.pdf" target="_blank" rel="noopener">pdf</a></strong></p>
+<p>multi-class active learning</p>
+<blockquote>
+<p>the problem of active learning with multiple annotators under the condition that multiple annotators may provide noisy labels has not been fully explored</p>
+</blockquote>
+<p>与【1】类似，也是使用reinforce learning的方法选择informative的样本</p>
+<p><strong>4.Active Transfer Learning with Zero-Shot Priors:Reusing Past Datasets for Future Tasks <a href="http://openaccess.thecvf.com/content_iccv_2015/papers/Gavves_Active_Transfer_Learning_ICCV_2015_paper.pdf" target="_blank" rel="noopener">pdf</a></strong><br>image classification问题<br>选择svm临界部分数据</p>
+<hr>
+<h2 id="Fine-tuning"><a href="#Fine-tuning" class="headerlink" title="Fine-tuning"></a>Fine-tuning</h2><p><strong>Joint Fine-Tuning in Deep Neural Networks for Facial Expression Recognition <a href="http://openaccess.thecvf.com/content_iccv_2015/papers/Jung_Joint_Fine-Tuning_in_ICCV_2015_paper.pdf" target="_blank" rel="noopener">pdf</a></strong></p>
+<ul>
+<li>数据量较小，而网络很复杂（参数多，维数高），不足以支撑从0开始训练</li>
+<li></li>
 </ul>
 
+          
+        
+      
+    </div>
+    
+    
+    
 
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
+    
 
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
+    
 
-<!-- Sidebar Divider -->
+    
 
-    <div class="sidebar-divider"></div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-<!-- Theme Material -->
+    
+      
 
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            主题 - Material
-            <span class="sidebar-badge badge-circle">i</span>
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/31/pytorch-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xingkui Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingkuiWei's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/31/pytorch-2/" itemprop="url">Pytorch学习笔记(二)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-31T19:23:21+08:00">
+                2018-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
-    </a>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Pytorch学习笔记-二"><a href="#Pytorch学习笔记-二" class="headerlink" title="Pytorch学习笔记(二)"></a>Pytorch学习笔记(二)</h1><p>标签： pytorch</p>
+<hr>
+<h2 id="torch-gather"><a href="#torch-gather" class="headerlink" title="torch.gather"></a>torch.gather</h2><p>torch.gather(input, dim, index, out=None) → Tensor</p>
+<blockquote>
+<p>如果input是一个n维的tensor，size为 (x0,x1…,xi−1,xi,xi+1,…,xn−1)，dim为i，然后index必须也为n维tensor，size为 (x0,x1,…,xi−1,y,xi+1,…,xn−1)，其中y &gt;= 1，最后输出的out与index的size是一样的。 </p>
+</blockquote>
+<p>对于一个三维向量来说：</p>
+<pre><code>out[i][j][k] = input[index[i][j][k]][j][k]  # if dim == 0
+out[i][j][k] = input[i][index[i][j][k]][k]  # if dim == 1
+out[i][j][k] = input[i][j][index[i][j][k]]  # if dim == 2
+</code></pre><h2 id="PIL-Image-numpy-ndarray与Tensor的相互转换"><a href="#PIL-Image-numpy-ndarray与Tensor的相互转换" class="headerlink" title="PIL.Image/numpy.ndarray与Tensor的相互转换"></a>PIL.Image/numpy.ndarray与Tensor的相互转换</h2><p>PIL.Image/numpy.ndarray转化为Tensor，常常用在训练模型阶段的数据读取，而Tensor转化为PIL.Image/numpy.ndarray则用在验证模型阶段的数据输出。</p>
+<p>我们可以使用 transforms.ToTensor() 将 PIL.Image/numpy.ndarray 数据进转化为torch.FloadTensor，并归一化到[0, 1.0]：</p>
+<ul>
+<li>取值范围为[0, 255]的PIL.Image，转换成形状为[C, H, W]，取值范围是[0, 1.0]的torch.FloadTensor；</li>
+<li>形状为[H, W, C]的numpy.ndarray，转换成形状为[C, H, W]，取值范围是[0, 1.0]的torch.FloadTensor。</li>
+</ul>
+<h2 id="存储和恢复模型并查看参数"><a href="#存储和恢复模型并查看参数" class="headerlink" title="存储和恢复模型并查看参数"></a>存储和恢复模型并查看参数</h2><p><strong>方法一(推荐)：</strong></p>
+<pre><code>保存
+torch.save(the_model.state_dict(), PATH)
+恢复
+the_model = TheModelClass(*args, **kwargs)
+the_model.load_state_dict(torch.load(PATH))
+</code></pre><p><strong>方法二：</strong></p>
+<pre><code>保存
+torch.save(the_model, PATH)
+恢复
+the_model = torch.load(PATH)
+</code></pre><h2 id="nn-module"><a href="#nn-module" class="headerlink" title="nn.module"></a>nn.module</h2><p>举例</p>
+<pre><code>class TwoLayerNet(torch.nn.Module):
+def __init__(self, D_in, H, D_out):
+    &quot;&quot;&quot;
+    In the constructor we instantiate two nn.Linear modules and assign them as
+    member variables.
+    &quot;&quot;&quot;
+    super(TwoLayerNet, self).__init__()
+    self.linear1 = torch.nn.Linear(D_in, H)
+    self.linear2 = torch.nn.Linear(H, D_out)
+def forward(self, x):
+    &quot;&quot;&quot;
+    In the forward function we accept a Variable of input data and we must return
+    a Variable of output data. We can use Modules defined in the constructor as
+    well as arbitrary operators on Variables.
+    &quot;&quot;&quot;
+    h_relu = self.linear1(x).clamp(min=0)
+    y_pred = self.linear2(h_relu)
+    return y_pred
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-<!-- Help & Support -->
-<!--
+    
+      
 
--->
+  
 
-<!-- Feedback -->
-<!--
+  
+  
+  
 
--->
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/VGGNet/">
 
-<!-- About Theme -->
-<!--
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xingkui Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
 
--->
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingkuiWei's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/26/VGGNet/" itemprop="url">VGGNet</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-26T19:57:04+08:00">
+                2018-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>进一步加深了网络，在ImageNet 2014中定位和分类任务分别获一二名</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ul>
+<li><p>ILSVRC-2013 使用了更小的window size和更小的stride。</p>
+</li>
+<li><p>本文使用更小的filter，稳定的增加了网络深度（更多卷积层）</p>
+</li>
+</ul>
+<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><p><strong>基本架构</strong></p>
+<ul>
+<li>224*224 input 减去均值</li>
+<li>使用了3<em>3和1</em>1卷积，保留维度的填充，部分卷积层后跟max-pooling2*2</li>
+<li>3 fc layer（4096 input） 1 softmax</li>
+<li>所有激活函数为relu</li>
+<li>LRN因为没有效果而被弃用<br><strong>图示</strong><br>![vggNet Architecture][1]<br>![number of parameters][2]<br><strong>讨论</strong><br>多个3<em>3层可以达到7</em>7的视野，同时减少了参数数量，增加了非线性<br>1*1保持channel数不变，增加了模型能力</li>
+</ul>
+<h2 id="Classification-Task"><a href="#Classification-Task" class="headerlink" title="Classification Task"></a>Classification Task</h2><p>与Alex类似，74次迭代后停止</p>
+<blockquote>
+<p>We conjecture that in spite of the larger number of parameters and the greater depth of our nets compared to (Krizhevsky et al., 2012), the nets required less epochs to converge due to (a) <strong>implicit regularisation</strong> imposed by greater depth and smaller conv. filter sizes; (b) pre-initialisation of certain layers.</p>
+</blockquote>
+<p>初始化：<br>先使用随机初始化训练较浅网络，使用训练后的结果（前四层和后三层）初始化更深的网络</p>
+<p>图片处理：<br>isotropically-rescaled：各向同性缩放<br>先缩放为S大小：[256,512]，再随机取区域裁剪为224*224</p>
+<p>测试：<br>缩放为scale Q<br><strong>将全连接转化为卷积</strong>，最后得到1000<em>n</em>n的输出，等效于在scale Q上选取了n*n个位置放入神经网络<br>节省了计算量</p>
+<blockquote>
+<p>作者：Hao Zhang<br>链接：<a href="https://www.zhihu.com/question/53420266/answer/180001976" target="_blank" rel="noopener">https://www.zhihu.com/question/53420266/answer/180001976</a><br>来源：知乎<br>卷积层和全连接层的唯一区别在于卷积层的神经元对输入是局部连接的, 并且同一个通道(channel)内不同神经元共享权值(weights). 卷积层和全连接层都是进行了一个点乘操作, 它们的函数形式相同. 因此卷积层可以转化为对应的全连接层, 全连接层也可以转化为对应的卷积层.<br>比如VGGNet中, 第一个全连接层的输入是7<em>7</em>512, 输出是4096. 这可以用一个卷积核大小7<em>7, 步长(stride)为1, 没有填补(padding), 输出通道数4096的卷积层等效表示, 其输出为1</em>1<em>4096, 和全连接层等价. 后续的全连接层可以用1x1卷积等效替代.<br>简而言之, 全连接层转化为卷积层的规则是: 将卷积核大小设置为输入的空间大小.这样做的好处在于卷积层对输入大小没有限制, 因此可以高效地对测试图像做滑动窗式的预测. 比如训练时对224</em>224大小的图像得到7<em>7</em>512的特征, 而对于384<em>384大小的测试图像, 将得到12</em>12<em>512的特征, 通过后面3个从全连接层等效过来的卷积层, 输出大小是6</em>6*1000, 这表示了测试图像在36个空间位置上的各类分数向量. 和分别对测试图像的36个位置使用原始的CNN相比, 由于等效的CNN共享了大量计算, 这种方案十分高效而又达到了相同目的<br>参考文献<br>[1]Simonyan, Karen, and Andrew Zisserman. “Very deep convolutional networks for large-scale image recognition.” arXiv preprint arXiv:1409.1556 (2014).<br>[2]. Lin, Min, Qiang Chen, and Shuicheng Yan. “Network in network.” arXiv preprint arXiv:1312.4400<br>[3]. Sermanet, Pierre, et al. “Overfeat: Integrated recognition, localization and detection usingconvolutional networks.” arXiv preprint arXiv:1312.6229 (2013).<br>[4]. Long, Jonathan, Evan Shelhamer, and Trevor Darrell. “Fully convolutional networks forsemantic segmentation.” Proceedings of the IEEE Conference on Computer Vision andPattern Recognition. 2015.<br>[5]. Fei-Fei Li, Andrej Karpathy, and Justin Johnson. CS231n: Convolutional Neural Networks for Visual Recognition. Stanford. 2016.</p>
+</blockquote>
+<h2 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h2><p>![evaluation results][3]<br>![multi-scale evaluation][4]<br>![dense&amp;crop evaluation][5]<br>![convNet fusion evaluation][6]</p>
+<p><strong>比GoogLeNet泛化性能更好</strong><br>  [1]: <a href="http://upload-images.jianshu.io/upload_images/3232548-bcc2ded7859ee146.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3232548-bcc2ded7859ee146.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a><br>  [2]: <a href="http://upload-images.jianshu.io/upload_images/3232548-42a791044eec4ff3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3232548-42a791044eec4ff3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a><br>  [3]: <a href="http://upload-images.jianshu.io/upload_images/3232548-0bf25f504335c186.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3232548-0bf25f504335c186.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a><br>  [4]: <a href="http://upload-images.jianshu.io/upload_images/3232548-5efba64ff7d5c399.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3232548-5efba64ff7d5c399.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a><br>  [5]: <a href="http://upload-images.jianshu.io/upload_images/3232548-076a5b039b016b20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3232548-076a5b039b016b20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a><br>  [6]: <a href="http://upload-images.jianshu.io/upload_images/3232548-396bedeb565e428c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3232548-396bedeb565e428c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/23/AlexNet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xingkui Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingkuiWei's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/23/AlexNet/" itemprop="url">AlexNet</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-23T09:46:38+08:00">
+                2018-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><pre><code>high-resolution 高分辨率
+
+ImageNet Top-1 
+对一张图片，如果概率最大的是正确答案，则正确
+TOp-5 概率前五正确则正确
+
+AlexNet 
+1.2million images 1000classes
+Top-1 erro 37.5% 
+Top-5 erro 17.0%
+60million parameter
+5 conv layer + 3 pooling layer
+2 ful-con layer
+1 softmax layer
+
+no-saturating neurons
+使用不挤压输出的激活函数，如relu等，可以减少梯度消失情况的出现
+
+dropout 减少过拟合
+</code></pre><h2 id="Backgroud"><a href="#Backgroud" class="headerlink" title="Backgroud"></a>Backgroud</h2><ul>
+<li>大规模数据集出现</li>
+<li>CNN有较强模型能力，适于图像处理任务</li>
+<li>GPU对于卷积的优化</li>
+</ul>
+<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><pre><code>from ImageNet-2010
+256 * 256 缩放+裁剪
+预处理：RGB减去分别减去平均值
+</code></pre><h2 id="Achitecture"><a href="#Achitecture" class="headerlink" title="Achitecture"></a>Achitecture</h2><p><img src="https://github.com/weixk2015/weixk2015.github.io/blob/master/image/alex_net.jpg?raw=true" alt="网络整体架构"><br> <strong>1. RELU</strong></p>
+<ul>
+<li>弃用了传统的tanh或是sigmoid，改用$ f(x) = max(0,x) $,大大提高了训练速度<br> <img src="https://github.com/weixk2015/weixk2015.github.io/blob/master/image/relu_tanh.jpg?raw=true" alt="reLu与tanh比较"></li>
+</ul>
+<blockquote>
+<p>图2：采用ReLUs的四层CNN（实线）对CIFAR-10数据集达到25%训练错误率的速度是采用tanh的CNN（虚线）的六倍。每个网络的学习率（learning rate）都是独立选取以使其训练速度最大化，且都没有经过正则化处理。当然，两种CNN的训练时间上的差距依不同架构会有所不同，但采用ReLUs的CNN总是快过用饱和激活函数的CNN。</p>
+</blockquote>
+<p> <strong>2. 多GPU训练</strong></p>
+<ul>
+<li>在两个GPU并行训练</li>
+<li>俩个GPU只在某些特定层传递数据</li>
+</ul>
+<p><strong>3. 归一化</strong></p>
+<ul>
+<li>从生物神经中受到启发</li>
+<li>近邻的较大值可以对自身进行抑制</li>
+</ul>
+<p><strong>4. overlapping pooling</strong></p>
+<ul>
+<li><p>3*3 2步长 减少了过拟合</p>
+<p><strong>4. 整体架构</strong></p>
+</li>
+</ul>
+<ul>
+<li>如上图</li>
+</ul>
+<pre><code>input    227 * 227 * 3 
+conv1    11 * 11 * 3 * 96
+active1  55 * 55 * 48 * 2
+pool1    27 * 27 * 48 * 2
+conv2    5  * 5  * 48 * 128 * 2
+active2  27 * 27 * 128 * 2
+pool2    13 * 13 * 128 * 2
+conv3    3  * 3  * 256 * 192 * 2
+active3  13 * 13 * 192 * 2
+conv4    3  * 3  * 192 * 192 * 2
+active4  13 * 13 * 192 * 2
+con5     3  * 3  * 192 * 128 * 2
+active5  13 * 13 * 128 * 2
+pool5    6  * 6  * 128 * 2
+fulc1    6  * 6  * 256 * 4096  
+active6-7  2048 * 2
+sofmax   1000
+</code></pre><h2 id="Reduce-Overfitting"><a href="#Reduce-Overfitting" class="headerlink" title="Reduce Overfitting"></a>Reduce Overfitting</h2><ol>
+<li>数据增广</li>
+</ol>
+<pre><code>训练数据的载入（以及生成）在CPU上进行，与GPU中的训练并行
+</code></pre><ul>
+<li>通过对原图进行变换（256<em>256提取出224</em>224）以及水平翻转，训练集增加2048倍<br> 测试时取五个224*224以及对应水平翻转</li>
+<li>基于PCA对于每个像素的色彩进行变换，使得物体识别不依赖于色彩</li>
+</ul>
+<ol>
+<li>随机失活<br> 在前两个全连接层使用随机失活，降低神经元之间的依赖性，失活概率0.5<br> 测试时不进行随机失活，将输出乘以0.5<br> 收敛速度受到了影响</li>
+</ol>
+<h2 id="More-Detail"><a href="#More-Detail" class="headerlink" title="More Detail"></a>More Detail</h2><ol>
+<li>w随机初始化，接近0，b在relu层初始化为1，其他为0，以加快收敛</li>
+<li>使用随机梯度下降，momentem，weight decay</li>
+<li>学习率从0.01开始，逐渐降低，每次loss不减小后除10</li>
+<li>120万图片，90次迭代</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/21/pytorch-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xingkui Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingkuiWei's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/21/pytorch-1/" itemprop="url">Pytorch学习笔记(一）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-21T11:23:55+08:00">
+                2018-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Pytorch学习笔记-一）"><a href="#Pytorch学习笔记-一）" class="headerlink" title="Pytorch学习笔记(一）"></a>Pytorch学习笔记(一）</h1><p>标签 ： pytorch</p>
+<hr>
+<h2 id="tensor"><a href="#tensor" class="headerlink" title="tensor"></a>tensor</h2><pre><code>x = torh.Tensor(2, 3) #生成一个2*3的tensor
+</code></pre><h2 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h2><p>位于<code>pytorch.autograd</code>中，有<code>data</code>（Tensor类型），<code>grad</code>，<code>grad_fn</code>等属性</p>
+<p>#####只有在需要时才使用Variable类型，否则使用numpy或tensor</p>
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><p>重写function需要实现<code>forward()</code>与<code>backward()</code>,下面给出</p>
+<pre><code>class LinearFunction(Function):
+# forward 和 backward 都是 静态方法
+@staticmethod
+# bias 是个可选参数，有个 默认值 None
+# ctx 参数必选，用于保存上下文供backward使用
+def forward(ctx, input, weight, bias=None):
+    # input，weight 都是 Tensor
+
+    ctx.save_for_backward(input, weight, bias)
+    output = input.mm(weight.t())
+    if bias is not None:
+        output += bias.unsqueeze(0).expand_as(output)
+    return output
+    # 返回Tensor
+
+# 由于 forward 只有一个返回值，所以 backward 只需要一个参数接收梯度。
+@staticmethod
+def backward(ctx, grad_output):
+    # grad_output 是 Variable 类型。
+    # 在开头的地方将保存的 tensor 给 unpack 了
+    # 然后给所有应该返回的梯度以 None 初始化。
+    # saved_variables 返回的是 Variable！！！
+    input, weight, bias = ctx.saved_variables
+    grad_input = grad_weight = grad_bias = None
+
+    # needs_input_grad 检查是可选的
+    # 返回值的个数需要和 forward 形参的个数（不包含 ctx）一致
+    if ctx.needs_input_grad[0]:
+        grad_input = grad_output.mm(weight)
+    if ctx.needs_input_grad[1]:
+        grad_weight = grad_output.t().mm(input)
+    if bias is not None and ctx.needs_input_grad[2]:
+        grad_bias = grad_output.sum(0).squeeze(0)
+    # 梯度的顺序和 forward 形参的顺序要对应。
+    return grad_input, grad_weight, grad_bias
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/20/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Xingkui Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XingkuiWei's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/20/hello-world/" itemprop="url">About me</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-20T23:23:30+08:00">
+                2018-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://weixk2015.github.io/" target="_blank" rel="noopener">my blog</a>! </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Xingkui Wei" />
+          <p class="site-author-name" itemprop="name">Xingkui Wei</p>
+           
+              <p class="site-description motion-element" itemprop="description">日常分享</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
 
     </div>
+  </aside>
 
-    <!-- Sidebar Image -->
-    
 
-</aside>
+        
+      </div>
+    </main>
 
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-        <a href="https://twitter.com/twitter" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
-                <span class="visuallyhidden">Twitter</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Facebook -->
-    
-        <a href="https://www.facebook.com/facebook" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-facebook">
-                <span class="visuallyhidden">Facebook</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Google + -->
-    
-        <a href="https://www.google.com/" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-gplus">
-                <span class="visuallyhidden">Google Plus</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Weibo -->
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-        <a href="https://github.com/weixk2015" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-    
-    <!-- V2EX -->
-    
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xingkui Wei</span>
 </div>
 
 
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>XingkuiWei's blog
-            
-        </div>
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
 
-        <!-- Paradox Footer Right Section -->
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
 
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
 
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
+        
 
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
+        
+      </div>
+    </footer>
+
     
-</footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
 
+  </div>
 
-                    <!-- Import JS File -->
+  
 
-    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
-
-
-
-    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
-
-
-
-    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
@@ -1128,81 +1490,107 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+  
 
 
 
-    <!-- Swiftye -->
-    
-
-    <!-- Local Search-->
-    
-
-
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Import prettify js  -->
 
 
 
-<!-- Window Load -->
-<!-- add class for prettify -->
-<script type="text/ls-javascript" id="window-load">
-    $(window).on('load', function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-
-    
-    
-</script>
-
-<!-- MathJax Load-->
-
-
-<!-- Bing Background -->
-
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
-
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
-    });
-</script>
-
-<!-- Custom Footer -->
 
 
 
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
 
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
-        }
-    })()
-console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
 
-                </main>
-            </div>
-        </body>
-    
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>
