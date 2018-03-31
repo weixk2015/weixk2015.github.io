@@ -43,8 +43,6 @@
     
     <title>
         
-            归档: 2018 | 
-        
         XingkuiWei&#39;s blog
     </title>
 
@@ -215,7 +213,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="XingkuiWei&#39;s blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/archives/2018/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/03/31/iccv-papers/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="XingkuiWei&#39;s blog">
@@ -230,13 +228,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/archives/2018/">
+    <meta property="og:url" content="http://yoursite.com/2018/03/31/iccv-papers/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018 | XingkuiWei&#39;s blog">
+    <meta property="og:title" content="XingkuiWei&#39;s blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="日常分享">
     
 
+    
+        <meta property="article:published_time" content="Sat Mar 31 2018 19:15:59 GMT+0800">
+        <meta property="article:modified_time" content="Sat Mar 31 2018 19:16:05 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -244,13 +245,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/archives/2018/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/03/31/iccv-papers/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/03/31/iccv-papers/index.html",
+    "headline": "",
+    "datePublished": "Sat Mar 31 2018 19:15:59 GMT+0800",
+    "dateModified": "Sat Mar 31 2018 19:16:05 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Xingkui Wei",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/cat.jpg"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "XingkuiWei&#39;s blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "日常分享",
+}
+</script>
 
 
     
@@ -284,429 +315,232 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#ICCV2015-ICCV2017-active-learning-papers"><span class="post-toc-number">1.</span> <span class="post-toc-text">ICCV2015+ICCV2017 active learning papers</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ICCV-2017"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">ICCV 2017</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ICCV-2015"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">ICCV 2015</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Fine-tuning"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Fine-tuning</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/31/pytorch-2/"></a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/31/pytorch-2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 31, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/31/iccv-papers/"></a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/31/iccv-papers/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 31, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/31/ResNet-1/"></a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            ResNe...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/31/ResNet-1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 31, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/26/VGGNet/">VGGNet</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/26/VGGNet/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 26, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/23/AlexNet/">AlexNet</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/23/AlexNet/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 23, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/21/pytorch-1/">Pytorch学习笔记(一）</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/21/pytorch-1/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 21, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/20/hello-world/">About me</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Welcome to 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/20/hello-world/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/cat.jpg" width="44px" height="44px" alt="Xingkui Wei's avatar">
-            </div>
-            <div>
-                <strong>Xingkui Wei</strong>
-                <span>3月 20, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/cat.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Xingkui Wei</strong>
+        <span>3月 31, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=&url=http://yoursite.com/2018/03/31/iccv-papers/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="ICCV2015-ICCV2017-active-learning-papers"><a href="#ICCV2015-ICCV2017-active-learning-papers" class="headerlink" title="ICCV2015+ICCV2017 active learning papers"></a>ICCV2015+ICCV2017 active learning papers</h1><p>标签（空格分隔）： Paper ICCV</p>
+<hr>
+<h2 id="ICCV-2017"><a href="#ICCV-2017" class="headerlink" title="ICCV 2017"></a>ICCV 2017</h2><p><strong>1. Learning Policies for Adaptive Tracking with Deep Feature Cascades <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Huang_Learning_Policies_for_ICCV_2017_paper.pdf" target="_blank" rel="noopener">PDF</a></strong></p>
+<p><strong>cmu</strong></p>
+<p>使用deep的method效果会好，但速度变慢；而直接用相关滤波的方法，效果没那么好，但速度快。因此作者结合了两种方法，转化为决策问题，提出了一个可以自适应的方法 Early-Stopping Tracker (EAST)，容易track的frame就采用相关滤波即可，而难追踪的frame就继续进行convolution，得到表现好的deep feature。<br>使用Reinforce Learning训练一个agent，能够在每一层判断是否停止正向传播</p>
+<p>将CNN中的future map导入相关滤波<br><img src="https://pic1.zhimg.com/v2-19717bd96e1aee65ae03af90ed0ff808_r.jpg" alt="arch"></p>
+<p><img src="https://github.com/weixk2015/weixk2015.github.io/blob/master/value_func.png?raw=true" alt="value func"><br><strong>2. Personalized Image Aesthetics <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Ren_Personalized_Image_Aesthetics_ICCV_2017_paper.pdf" target="_blank" rel="noopener">pdf</a></strong></p>
+<p><strong>Rutgers University</strong></p>
+<p>回归问题，预测用户的美学评分</p>
+<p>通用评分预测+个人（内容+属性）网络<br>通用：cnn euclidean loss<br>个人：svr<br>分数及美学属性：cnn fine-tuning<br>内容属性：分类网络+k-means得到类别 之后fine-tune+soft-max<br>喂入用户评分与标准分相差较大的样本<br><strong>3. Hard-Aware Deeply Cascaded Embedding <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Yuan_Hard-Aware_Deeply_Cascaded_ICCV_2017_paper.pdf" target="_blank" rel="noopener">pdf</a></strong></p>
+<p><strong>pku</strong></p>
+<p><img src="http://oqgcmhf1h.bkt.clouddn.com/17-11-24/80156005.jpg" alt="hdc"><br>将网络分为多级，在每一级输出后选择loss较大的样本进入下一级进行训练<br><strong>4. Adaptive Feeding: Achieving Fast and Accurate Detections by Adaptively<br>Combining Object Detectors <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Zhou_Adaptive_Feeding_Achieving_ICCV_2017_paper.pdf" target="_blank" rel="noopener">pdf</a></strong></p>
+<p><strong>nju</strong></p>
+<p>与1类似，关于object detection</p>
+<p><strong>5.Active Learning for Human Pose Estimation</strong> <a href="http://openaccess.thecvf.com/content_ICCV_2017/papers/Liu_Active_Learning_for_ICCV_2017_paper.pdf" target="_blank" rel="noopener">pdf</a><br>提出了multiple peak entropy， 用于measure uncertainty，</p>
+<h2 id="ICCV-2015"><a href="#ICCV-2015" class="headerlink" title="ICCV 2015"></a>ICCV 2015</h2><p> <strong>1.</strong> <strong>Context Aware Active Learning of Activity Recognition Model <a href="http://openaccess.thecvf.com/content_iccv_2015/papers/Hasan_Context_Aware_Active_ICCV_2015_paper.pdf" target="_blank" rel="noopener">pdf</a></strong><br><strong>ucr</strong><br>Activity Recognition，使用active learning 获得annotation<br>contribution：基于video中<strong>时空的联系</strong>，选择最informative的一个activity请求标注<br>使用CRF</p>
+<p><strong>2. Introducing Geometry in Active Learning for Image Segmentation <a href="http://openaccess.thecvf.com/content_iccv_2015/papers/Konyushkova_Introducing_Geometry_in_ICCV_2015_paper.pdf" target="_blank" rel="noopener">pdf</a></strong></p>
+<blockquote>
+<p>a novel uncertainty function that combines traditional Feature Uncertainty with Geometric Uncertainty</p>
+</blockquote>
+<p><strong>3. Multi-class Multi-annotator Active Learning with Robust Gaussian Process for<br>Visual Recognition <a href="http://openaccess.thecvf.com/content_iccv_2015/papers/Long_Multi-Class_Multi-Annotator_Active_ICCV_2015_paper.pdf" target="_blank" rel="noopener">pdf</a></strong></p>
+<p>multi-class active learning</p>
+<blockquote>
+<p>the problem of active learning with multiple annotators under the condition that multiple annotators may provide noisy labels has not been fully explored</p>
+</blockquote>
+<p>与【1】类似，也是使用reinforce learning的方法选择informative的样本</p>
+<p><strong>4.Active Transfer Learning with Zero-Shot Priors:Reusing Past Datasets for Future Tasks <a href="http://openaccess.thecvf.com/content_iccv_2015/papers/Gavves_Active_Transfer_Learning_ICCV_2015_paper.pdf" target="_blank" rel="noopener">pdf</a></strong><br>image classification问题<br>选择svm临界部分数据</p>
+<hr>
+<h2 id="Fine-tuning"><a href="#Fine-tuning" class="headerlink" title="Fine-tuning"></a>Fine-tuning</h2><p><strong>Joint Fine-Tuning in Deep Neural Networks for Facial Expression Recognition <a href="http://openaccess.thecvf.com/content_iccv_2015/papers/Jung_Joint_Fine-Tuning_in_ICCV_2015_paper.pdf" target="_blank" rel="noopener">pdf</a></strong></p>
+<ul>
+<li>数据量较小，而网络很复杂（参数多，维数高），不足以支撑从0开始训练</li>
+<li></li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/03/31/pytorch-2/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/03/31/ResNet-1/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
