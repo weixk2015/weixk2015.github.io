@@ -1,0 +1,204 @@
+
+<html>
+
+<head>
+    <link rel="StyleSheet" href="deepsfm_style.css" type="text/css" media="all">
+    <title>DeepSFM</title>
+    <meta property="og:title" content="DeepSFM: Structure From Motion Via Deep Bundle Adjustment">
+    <meta property="og:image" content="https://www.cs.cmu.edu/~wyuan1/cmr/resources/images/shapenet.png">
+    <meta property="og:url" content="https://youtu.be/bzJrPQilPxg">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+<body>
+    <br>
+    <div class="center-div">
+        <span style="font-size:40px">DeepSFM: Structure From Motion Via Deep Bundle Adjustment</span>
+    </div>
+
+    <br>
+    <table align="center" width="800px">
+        <tbody>
+            <tr>
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"><a href="#">Xingkui Wei</a></span>
+                    </div>
+                </td>
+
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"><a href="#">Yinda Zhang</a></span>
+                    </div>
+                </td>
+
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"><a href="#">Zhuwen Li</a></span>
+                    </div>
+                </td>
+
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"><a href="#">Yanwei Fu</a></span>
+                    </div>
+                </td>
+
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px"><a href="#">Xiangyang Xue</a></span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <table align="center" width="700px">
+        <tbody>
+            <tr>
+                <td align="center" width="100px">
+                    <div class="center-div">
+                        <span style="font-size:22px">Fudan University &nbsp; &nbsp; Google Research &nbsp; &nbsp; Nuro, Inc.</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <table align="center" width="600px">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="center-div">
+                        <a href="#"><img src="./resources/images/pipeline.png" width="1000px"></a><br>
+                    </div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1>Abstract</h1>
+    </div>
+    <p>
+        Structure from motion (SfM) is an essential computer vision problem which has not been
+        well handled by deep learning. One of the promising trends is to apply explicit structural
+        constraint, e.g. 3D cost volume, into the network. However, existing methods usually assume
+        accurate camera poses either from GT or other methods, which is unrealistic in practice.
+        In this work, we design a physical driven architecture, namely DeepSFM, inspired by traditional
+        Bundle Adjustment (BA), which consists of two cost volume based architectures for depth and pose
+        estimation respectively, iteratively running to improve both. The explicit constraints on both
+        depth (structure) and pose (motion), when combined with the learning components, bring the merit
+        from both traditional BA and emerging deep learning technology. Extensive experiments on various
+        datasets show that our model achieves the state-of-the-art performance on both depth and pose
+        estimation with superior robustness against less number of inputs and the noise in initialization.
+    </p>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1 id="code">Network Architecture</h1>
+    </div>
+    <div class="center-div">
+        <img class="round" style="height:400" src="./resources/images/architecture.png">
+    </div>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1 id="paper">Paper, Code and Data</h1>
+    </div>
+    <table align="center" width="600px">
+
+        <tbody>
+            <tr>
+                <td>
+                    <img class="layered-paper-big" style="height:175px" src="./resources/images/page1.png">
+                </td>
+                <td>
+                    <span style="font-size:14pt">X. Wei, Y. Zhang, Z. Li, Y. Fu., X. Xue</span>
+                    <br><br>
+                    <b><span style="display:inline-block;width:600px;font-size:14pt">DeepSFM: Structure From Motion
+                        Via Deep Bundle Adjustment</span></b>
+                    <br><br>
+                    <span style="font-size:14pt">ECCV 2020 (Oral).</span>
+                    <br><br>
+                    <span style="font-size:20px">
+                        <a href="#">[arXiv]</a> &nbsp; &nbsp;
+                        <a href="./resources/bibtex.txt">[Bibtex]</a> &nbsp; &nbsp;
+                        <a href="#">[GitHub]</a> &nbsp; &nbsp;
+                        <a href="#">[Google Drive]</a>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <hr>
+    <div class="center-div">
+        <h1 id="code">Results</h1>
+    </div>
+    <div class="center-div">
+        <table align="center" width="600px">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="center-div">
+                            <img src="./resources/images/results.png" width="400px"><br>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="center-div">
+                            <img src="./resources/images/results_eth3d.png" width="400px"><br>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="center-div">
+                            <span style="font-size:14px"><i>Results on DeMoN dataset.</i>
+                            </span></div>
+                    </td>
+                    <td>
+                        <div class="center-div">
+                            <span style="font-size:14px"><i>Results on ETH3D dataset.</i>
+                            </span></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br><br>
+    <hr>
+    <table align="center" width="980px">
+        <tbody>
+            <tr>
+                <td>
+                    <left>
+                        <div class="center-div">
+                            <h1>Acknowledgements</h1>
+                        </div>
+                        <div class="center-div">
+                        This project is partly supported by NSFC Projects (61702108), STCSM Projects (19511120700,
+                            and 19ZR1471800), SMSTM Project (2018SHZDZX01), SRIF Program (17DZ2260900), and ZJLab.
+                            We would also like to thank DPSNet. The website is
+                        modified from this <a href="https://walsvid.github.io/Pixel2MeshPlusPlus/">template</a>.
+                        </div>
+                    </left>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+
+
+
+</body>
+
+</html>
